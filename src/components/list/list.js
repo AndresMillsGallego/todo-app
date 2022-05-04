@@ -1,28 +1,20 @@
 import React, { useContext, useState, useEffect } from 'react';
+import { render } from 'react-dom/cjs/react-dom.production.min';
 import { SettingsContext } from '../../context/settings';
 
 const List = ({ list, toggleComplete }) => {
 
   const settings = useContext(SettingsContext);
 
-  function displayList() {
-    let listItems = [];
-    for (let i = start; i < end; i++) {
-      listItems.push(list[i])
-    }
-    setResults([listItems])
-    console.log(results)
-  }
+  const [page, setPage] = useState(1);
   
-  function forward(e) {
-    
-  } 
-
   
+  useEffect(() => {
+    renderResults()
+  }, [list])
 
   return (
     <>
-      
       {list.map(item => (
 
         <div key={item.id}>
@@ -31,7 +23,7 @@ const List = ({ list, toggleComplete }) => {
           <p><small>Difficulty: {item.difficulty}</small></p>
           <div onClick={() => toggleComplete(item.id)}>Complete: {item.complete.toString()}</div>
           <hr />
-          <button type='click' onClick={displayList}>Next</button>
+          {/* <button type='click' onClick={displayList}>Next</button> */}
         </div>
 
       ))

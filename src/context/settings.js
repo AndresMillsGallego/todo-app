@@ -7,6 +7,7 @@ function SettingsProvider({children}) {
   const state = {
     showCompleted: true, 
     itemsToDisplay: 3,
+    sort: 'difficulty',
 
   }
 
