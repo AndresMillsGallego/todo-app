@@ -4,15 +4,17 @@ export const SettingsContext = React.createContext();
 
 function SettingsProvider({children}) {
 
-  const [showCompleted, setShowCompleted] = useState(true);
+  const [showCompleted, setShowCompleted] = useState(false);
   const [itemsToDisplay, setItemsToDisplay] = useState(3);
   const [sortString, setSortString] = useState('difficulty');
 
   const state = {
-    showCompleted: true, 
-    itemsToDisplay: 3,
-    sort: 'difficulty',
-
+    showCompleted, 
+    itemsToDisplay,
+    sortString,
+    setShowCompleted,
+    setItemsToDisplay,
+    setSortString
   }
 
   return (
