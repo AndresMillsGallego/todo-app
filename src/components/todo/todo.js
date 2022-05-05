@@ -7,6 +7,7 @@ import { v4 as uuid } from 'uuid';
 import Header from '../header/header'
 import Form from '../form/form'
 import List from '../list/list'
+import Footer from '../footer/Footer'
 
 const ToDo = () => {
 
@@ -55,18 +56,19 @@ const ToDo = () => {
   return (
     <>
       <Header incomplete={incomplete} />
-        <section id='form-list'>
-          <Form
-            handleChange={handleChange}
-            handleSubmit={handleSubmit}
-            defaultValues={defaultValues}
-          />
+      <div id='main'>
+        <Form
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          defaultValues={defaultValues}
+        />
 
-          <List
-            list={list}
-            toggleComplete={toggleComplete}
-          />
-        </section>
+        <List
+          list={list}
+          toggleComplete={toggleComplete}
+        />
+      </div>
+    <Footer />
     </>
   );
 };
