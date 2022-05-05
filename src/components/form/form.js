@@ -1,6 +1,8 @@
 import React from 'react';
 import useForm from '../../hooks/form.js';
 
+import { Button } from '@blueprintjs/core'
+
 
 const Form = ({ handleChange, handleSubmit, defaultValues }) => {
   
@@ -25,7 +27,7 @@ const Form = ({ handleChange, handleSubmit, defaultValues }) => {
         </label>
 
         <label>
-          <button type="submit">Add Item</button>
+          <Button type="submit" className='bp4-intent-success'>Add Item</Button>
         </label>
       </form>
   )

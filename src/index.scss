@@ -2,14 +2,96 @@
 @import "~@blueprintjs/core/lib/css/blueprint.css";
 @import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
 
+* {
+  border-radius: 5px;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(to bottom right, steelBlue, mediumSeaGreen);
+  margin: 30px auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1rem;
+  border: 3px solid black;
+  margin: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 3px 3px 5px;
+}
 form {
+  width: 50%;
+  height: 60vh;
+  border: 3px solid darkmagenta;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
-  margin: 30px auto;
-}
+  margin: 0 2rem;
+  background-color:cornsilk;
+  box-shadow: 3px 3px 5px;
+  }
 
 form label {
   margin-bottom: 1rem
 }
 
+form input {
+  margin-left: 1rem;
+}
+
+.bp4-card {
+  width: 75%;
+  margin-bottom: 1rem;
+  background-color:lightcyan;
+  box-shadow: 3px 3px 5px;
+  border: 3px solid darkmagenta;
+}
+
+#main {
+  display: flex;
+  margin-left: 10%;
+}
+
+#cards {
+  width: 75%;
+  height: 60vh;
+}
+
+.buttons {
+  width: 25%;
+  margin: auto;
+  margin-right: 1rem;
+  
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1vw;
+  font-family: cursive;
+  border: 3px solid black;
+  margin: 2rem;
+  margin-top: 8%;
+  padding: 1rem;
+}
+
+a {
+  margin-right: 1rem;
+}
+
+#me:hover, a:hover {
+  cursor: pointer;
+  color:fuchsia;
+}
+
+.showPath {
+  font-size: 1.5vw;
+  word-spacing: 1vw;
+}
+
+.hidden {
+  visibility: hidden;
+}
