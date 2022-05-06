@@ -7,7 +7,7 @@
 }
 
 body {
-  height: 100vh;
+  height: 110vh;
   background-image: linear-gradient(to bottom right, steelBlue, mediumSeaGreen);
   margin: 30px auto;
 }
@@ -64,6 +64,8 @@ form input {
 #cards {
   width: 75%;
   height: 60vh;
+  max-height: fit-content;
+  overflow: auto;
 }
 
 .buttons {
@@ -105,6 +107,25 @@ a {
 
 #settings-form {
   margin: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+}
+
+#settings-form h2 {
+  text-align: center;
+  font-size: 2rem;
+  border-bottom: 2px double darkmagenta;
+  padding-bottom: .5rem;
+}
+
+#settings-form input {
+  margin: auto;
+  margin-bottom: 1rem;
+  margin-top: .5rem;
 }
 
 #navBar {
@@ -114,8 +135,41 @@ a {
   display: flex;
   justify-content: center;
   background-color: inherit;
+  border: 2px solid rgba(0, 0, 0, 0.73);
+  box-shadow: 1px 1px 2px;
 }
 
 #nav-heading {
   margin-left: 1rem;
+}
+
+.links {
+  font-weight: bold;
+}
+
+#palm {
+  width: 75%;
+  height: 60vh;
+  border: 3px solid darkmagenta;
+}
+
+.mini-palm {
+  width: 20%;
+  margin: auto;
+  float: right;
+  overflow: hidden;
+}
+
+#current-settings {
+  width: 50%;
+  border: 2px solid darkmagenta;
+  padding: .5rem;
+  margin-top: 6rem;
+  background-color: azure;
+}
+
+#current-settings h3 {
+  margin-bottom: 2rem;
+  padding-bottom: .5rem;
+  border-bottom: 2px double darkmagenta;
 }

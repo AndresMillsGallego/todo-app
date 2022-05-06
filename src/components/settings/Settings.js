@@ -10,7 +10,7 @@ const Settings = () => {
 
   const settings = useContext(SettingsContext);
 
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(settings.showCompleted);
   const [items, setItems] = useState(settings.itemsToDisplay);
   const [sort, setSort] = useState(settings.sortString);
 
@@ -18,21 +18,22 @@ const Settings = () => {
 
   const handleItems = (e) => {
     setItems(e.target.value);
-    console.log(items)
   }
 
   const handleSort = (e) => {
     setSort(e.target.value)
-    console.log(sort)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(settings.itemsToDisplay)
     settings.setShowCompleted(checked);
+    localStorage.setItem('completed', JSON.stringify(checked));
     settings.setItemsToDisplay(items);
+    localStorage.setItem('items', JSON.stringify(items));
     settings.setSortString(sort);
-
+    localStorage.setItem('sort', JSON.stringify(sort))
+    alert('Change Approved!')
   }
 
   return (
@@ -44,14 +45,22 @@ const Settings = () => {
           Show Completed
           <Switch checked={checked} onChange={() => setChecked(!checked)} />
         </Label>
-        Items To Display
-        <input type='number' onChange={handleItems} />
+          Items To Display <br />
+          <input type='number' min='1' max='5' onChange={handleItems} />
         <Label>
-          Sort String
+          Sort String <br />
           <input type='text' onChange={handleSort} />
         </Label>
 
-        <Button type='submit'>Submit Changes</Button>
+        <Button type='submit' className='bp4-intent-primary'>Submit Changes</Button>
+        {settings.sortString? 
+        <div id='current-settings'>
+          <h3>Current Settings</h3>
+          <p>Show Completed: {settings.showCompleted.toString()}</p>
+          <p>Items To Display: {settings.itemsToDisplay}</p>
+          <p>Sort String: {settings.sortString}</p>
+        </div> : null
+        }
       </form>
       <Footer />
     </>

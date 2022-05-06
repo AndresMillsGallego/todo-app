@@ -9,15 +9,15 @@ function Header({ incomplete }) {
   return (
     <>
       <header>
-        <h1>{header ? 'Home' : 'Settings'}</h1>
+        {header ? <h1>Home</h1> : <h1>Settings</h1>}
 
         <Navbar id='navBar' className='bp4-dark bp4-align-center'>
           <NavbarGroup align='center'>
-            <Link to='/'>Home</Link>
+            <Link to='/' className='links'>Home</Link>
               <NavbarDivider/>
                 <NavbarHeading id='nav-heading'>Links</NavbarHeading>
               <NavbarDivider/>
-            <Link to='/settings' onClick={() => toggleHeader(false)}>Settings</Link>
+            <Link to='/settings' className='links' onClick={() => toggleHeader(false)}>Settings</Link>
           </NavbarGroup>
         </Navbar>
 
