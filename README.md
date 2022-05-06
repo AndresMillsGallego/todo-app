@@ -205,3 +205,5 @@ Here is an example of my code using `localStorage`
 I also set up the settings page to always render the current user settings so that the user can check them to see what they are _before_ changing them.  This also serves as excellent proof of life that my code is working as intended.  
 
 ![settings](./settings.png)
+
+## Lab 33
