@@ -169,3 +169,39 @@ See below:
   };
 };
 ```
+
+## Lab 32
+
+For this lab we continued off our work from the previous day and expanded on our application.  
+The most noteworthy changes for this lab are:
+
+- A new `form` that the user can use to change their settings
+- Utilizing the `BrowserRouter` to make a path and link to the home and /settings pages
+- Utilizing `localStorage` to store our settings.  
+
+For that last item we set up our app so that on page load it looks first to `localStorage` and if there are any saved settings we load those first.  If not, then we stick with the defaults. 
+
+Testing for all of this was relatively easy.  
+
+- Made sure the new Settings.js component is consuming the SettingsContext correctly
+- Make sure the form was working
+- Make sure that `localStorage` was doing its job both in the storing, and the getting
+
+All these tests were done from the console and by checking the functionality of the application
+
+Here is an example of my code using `localStorage`
+
+```JavaScript
+  const getItems = () => {
+    const savedItems = localStorage.getItem('items');
+    const items = +JSON.parse(savedItems)
+    if (items) setItemsToDisplay(items)
+    else setItemsToDisplay(3);
+  } 
+
+  useEffect(() => {getItems()}, [])
+```
+
+I also set up the settings page to always render the current user settings so that the user can check them to see what they are _before_ changing them.  This also serves as excellent proof of life that my code is working as intended.  
+
+![settings](./settings.png)
