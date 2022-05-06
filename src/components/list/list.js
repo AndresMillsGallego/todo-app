@@ -11,7 +11,8 @@ const List = ({ list, toggleComplete }) => {
 
   const renderItems = () => {
     let items = [];
-    let start = (settings.itemsToDisplay * page) - 3;
+    let temp = settings.itemsToDisplay
+    let start = (settings.itemsToDisplay * page) - temp;
     let end = (settings.itemsToDisplay * page);
     if (list.length > settings.itemsToDisplay) {
       for (let i = start; i < end; i++) {

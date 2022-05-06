@@ -102,3 +102,20 @@ a {
 .hidden {
   visibility: hidden;
 }
+
+#settings-form {
+  margin: auto;
+}
+
+#navBar {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  background-color: inherit;
+}
+
+#nav-heading {
+  margin-left: 1rem;
+}
